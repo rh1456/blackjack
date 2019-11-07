@@ -63,6 +63,8 @@ h1 {
   height: 20rem;
 }
 .playerOne {
+  display: flex;
+  align-content: center;
   border: solid;
   border-color: black;
   width: 15%;
