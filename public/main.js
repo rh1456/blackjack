@@ -15,6 +15,7 @@ const rank = [
   'Queen',
   'King'
 ]
+const value = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 const deck = []
 
@@ -36,12 +37,14 @@ const cardValue = () => {
       const card = {
         rank: rank[j],
         suit: suits[i],
-        value: makeCardValue(rank[j])
+        value: makeCardValue(rank[j]),
+        imageUrl: rank[j] + '_of_' + suits[i] + '.svg'
       }
       deck.push(card)
     }
   }
   console.log([deck])
+  console.log(deck)
 }
 
 //deal and display card on UI
@@ -52,7 +55,7 @@ const dealCardPic = () => {
   const p = document.createElement('p')
   p.textContent = drawnCard.rank + 'of' + drawnCard.suit
   const img = document.createElement('img')
-  img.src = 'cards' + drawnCard.imageUrl
+  img.src = '/images/cards/' + drawnCard.imageUrl
   cardLi.appendChild(p)
   cardLi.appendChild(img)
   document.querySelector('.pHand').appendChild(cardLi)
@@ -66,9 +69,15 @@ const dealCardPic = () => {
 //create the deck
 
 const makeDeck = () => {
-  for (let suitsIndex = 0; suitsIndex < suits.length; suitsIndex++) {
-    for (let rankIndex = 0; rankIndex < rank.length; rankIndex++) {
-      deck.push(rank[rankIndex] + ' ' + 'of' + ' ' + suits[suitsIndex])
+  for (let i = 0; i < suits.length; i++) {
+    for (let j = 0; j < rank.length; j++) {
+      const card = {
+        rank: rank[j],
+        suit: suits[i],
+        value: makeCardValue(rank[j]),
+        imageUrl: rank[j] + '_of_' + suits[i] + '.svg'
+      }
+      deck.push(card)
     }
   }
 }
@@ -82,7 +91,7 @@ const shuffleDeck = () => {
     deck[j] = holder
   }
 
-  console.log(shuffleDeck)
+  // console.log(shuffleDeck)
 }
 
 const dealCard = () => {
