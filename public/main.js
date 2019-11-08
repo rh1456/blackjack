@@ -24,18 +24,45 @@ const playerHand = []
 const makeCardValue = rank => {
   if (rank === 'Ace') {
     return 11
-  } else if (rank === 'King' || rank === 'Qeen' || rank === 'jack') {
+  } else if (rank === 'King' || rank === 'Queen' || rank === 'jack') {
     return 10
   } else {
     return parseInt(rank)
   }
 }
-
-//deal card images
-const dealCardPic = () => {
-  const drawnCard = deck.pop()
+const cardValue = () => {
+  for (let i = 0; i < suits.length; i++) {
+    for (let j = 0; j < rank.length; j++) {
+      const card = {
+        rank: rank[j],
+        suit: suits[i],
+        value: makeCardValue(rank[j])
+      }
+      deck.push(card)
+    }
+  }
+  console.log([deck])
 }
 
+//deal and display card on UI
+const dealCardPic = () => {
+  const drawnCard = deck.pop()
+  playerHand.push(drawnCard)
+  const cardLi = document.createElement('li')
+  const p = document.createElement('p')
+  p.textContent = drawnCard.rank + 'of' + drawnCard.suit
+  const img = document.createElement('img')
+  img.src = 'cards' + drawnCard.imageUrl
+  cardLi.appendChild(p)
+  cardLi.appendChild(img)
+  document.querySelector('.pHand').appendChild(cardLi)
+
+  let sum = 0
+  for (let i = 0; i < playerHand.length; i++) {
+    sum += playerHand[i].value
+  }
+  document.querySelector('.player-sum').textContent = sum
+}
 //create the deck
 
 const makeDeck = () => {
@@ -65,10 +92,11 @@ const dealCard = () => {
     1
   )[0]
 }
+console.log(makeDeck)
 const makeAndShuffleDeck = () => {
   makeDeck()
   shuffleDeck()
 }
 
-document.querySelector('.hit').addEventListener('click', dealCard)
+document.querySelector('.hit').addEventListener('click', dealCardPic)
 document.addEventListener('DOMContentLoaded', makeAndShuffleDeck)

@@ -41,7 +41,7 @@ h1 {
 .background {
   display: flex;
   justify-content: center;
-  padding-top: 12rem;
+  padding-top: 6rem;
   /* margin-top: 23rem; */
 }
 .dealer {
@@ -50,6 +50,17 @@ h1 {
   justify-content: space-between;
   padding-right: 37rem;
 }
+.Ellen {
+  border: none;
+  border-color: none;
+  width: 10rem;
+  padding-right: 30`rem;
+}
+.playerPic {
+  border: none;
+  width: 19rem;
+}
+
 .players {
   display: flex;
   flex-direction: row;
@@ -108,4 +119,7 @@ img {
   background-color: #cf943d;
   width: 8rem;
   height: 4rem;
+}
+.pHand {
+  color: burlywood;
 }
