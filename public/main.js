@@ -66,6 +66,7 @@ const dealCardPic = () => {
   }
   document.querySelector('.player-sum').textContent = sum
 }
+
 //create the deck
 
 const makeDeck = () => {

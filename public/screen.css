@@ -10,7 +10,6 @@ body {
   min-height: 100%;
   background-color: #9a0719;
 }
-
 .top {
   display: flex;
   justify-content: center;
@@ -73,7 +72,7 @@ h1 {
   width: 100%;
   height: 20rem;
 }
-.playerOne {
+/* .playerOne {
   display: flex;
   align-content: center;
   border: solid;
@@ -81,15 +80,15 @@ h1 {
   width: 15%;
   height: 19rem;
   margin-left: 20%;
-}
-.playerTwo {
+} */
+/* .playerTwo {
   border: solid;
   border-color: black;
   width: 15%;
   height: 19rem;
   margin-right: 25%;
-}
-img {
+} */
+.background {
   /* float: center; */
   width: 19rem;
   border: dotted;
@@ -193,28 +192,30 @@ img {
     width: 100%;
     height: 20rem;
   }
-  .playerOne {
+  /* .playerOne {
     display: flex;
+    justify-content: row;
     align-content: center;
     border: solid;
     border-color: black;
     width: 15%;
     height: 19rem;
     margin-left: 20%;
-  }
-  .playerTwo {
+  } */
+  /* .playerTwo {
     border: solid;
     border-color: black;
     width: 15%;
     height: 19rem;
     margin-right: 25%;
-  }
-  img {
+  } */
+  .background {
     /* float: center; */
     width: 19rem;
     border: dotted;
     border-color: yellow;
     border-radius: 40%;
+    margin-left: 22rem;
   }
   .buttons {
     display: flex;
@@ -242,5 +243,13 @@ img {
   }
   .pHand {
     color: burlywood;
+  }
+  ul {
+    display: flex;
+    justify-content: row;
+    list-style: none;
+  }
+  img {
+    width: 10rem;
   }
 }
