@@ -98,7 +98,7 @@ h1 {
 .buttons {
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 2rem;
   padding-left: 28rem;
   padding-right: 34rem;
@@ -119,6 +119,24 @@ h1 {
   width: 8rem;
   height: 4rem;
 }
+.start {
+  font-family: cursive;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: #cf943d;
+  width: 8rem;
+  height: 4rem;
+}
+
+.restart {
+  font-family: cursive;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: #cf943d;
+  width: 8rem;
+  height: 4rem;
+}
+
 .pHand {
   color: burlywood;
 }
@@ -220,7 +238,7 @@ h1 {
   .buttons {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: center;
     padding-top: 2rem;
     padding-left: 28rem;
     padding-right: 34rem;
@@ -237,10 +255,28 @@ h1 {
     font-family: cursive;
     font-size: 20px;
     border-radius: 50%;
+    background-color: green;
+    width: 8rem;
+    height: 4rem;
+  }
+  .start {
+    font-family: cursive;
+    font-size: 20px;
+    border-radius: 50%;
     background-color: #cf943d;
     width: 8rem;
     height: 4rem;
   }
+
+  .restart {
+    font-family: cursive;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: #cf943d;
+    width: 8rem;
+    height: 4rem;
+  }
+
   .pHand {
     color: burlywood;
   }
@@ -251,5 +287,8 @@ h1 {
   }
   img {
     width: 10rem;
+  }
+  .player-sum {
+    font-size: 20px;
   }
 }
