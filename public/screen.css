@@ -190,7 +190,7 @@ h1 {
     border: none;
     border-color: none;
     width: 10rem;
-    padding-right: 15rem;
+    padding-left: 10rem;
   }
   .playerPic {
     border: none;
@@ -207,7 +207,7 @@ h1 {
     border-top: dotted;
     border-bottom: dotted;
     border-color: green;
-    width: 100%;
+    width: 105%;
     height: 20rem;
   }
   /* .playerOne {
@@ -240,7 +240,7 @@ h1 {
     align-items: flex-end;
     justify-content: center;
     padding-top: 2rem;
-    padding-left: 28rem;
+    padding-left: 33rem;
     padding-right: 34rem;
   }
   .hit {
@@ -283,12 +283,22 @@ h1 {
   ul {
     display: flex;
     justify-content: row;
+    flex-wrap: wrap;
     list-style: none;
   }
   img {
-    width: 10rem;
+    width: 6rem;
   }
   .player-sum {
-    font-size: 20px;
+    padding-right: 2rem;
+    font-size: 35px;
+    color: darkgreen;
+  }
+  .resetButton {
+    border: solid;
+    border-radius: 50%;
+    width: 10rem;
+    height: 4rem;
+    font-weight: bold;
   }
 }

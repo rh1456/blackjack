@@ -30,21 +30,6 @@ const makeCardValue = rank => {
     return parseInt(rank)
   }
 }
-// const cardValue = () => {
-//   for (let i = 0; i < suits.length; i++) {
-//     for (let j = 0; j < rank.length; j++) {
-//       const card = {
-//         rank: rank[j],
-//         suit: suits[i],
-//         value: makeCardValue(rank[j]),
-//         imageUrl: rank[j] + '_of_' + suits[i] + '.svg'
-//       }
-//       deck.push(card)
-//     }
-//   }
-//   console.log([deck])
-//   console.log(deck)
-// }
 
 // start game function
 const startGame = () => {
@@ -62,14 +47,29 @@ const showDealer = () => {
   const img = document.createElement('img')
   img.src = '/images/cards/' + drawnCard.imageUrl
   cardLi.appendChild(img)
-  document.querySelector('.dHand').appendChild(cardLi).hidden = false
-  document.querySelector('.dealer-sum').hidden = false
+  document.querySelector('.dHand').appendChild(cardLi)
+  document.querySelector('.dealer-sum')
+}
+
+// dealer's hand
+const dealDealer = () => {
+  const drawnCard = deck.pop()
+  dealerHand.push(drawnCard)
+  const cardLi = document.createElement('li')
+  const img = document.createElement('img')
+  img.src = '/images/cards/' + drawnCard.imageUrl
+  cardLi.appendChild(img)
+  document.querySelector('.dHand').appendChild(cardLi).hidden = true
+  let dealerSum = 0
+  for (let i = 0; i < dealerHand.length; i++) {
+    dealerSum += dealerHand[i].value
+    document.querySelector('.dealer-sum')
+  }
 }
 
 const standButton = () => {
   showDealer()
   showDealer()
-  dealDealer()
 }
 
 // refresh button function
@@ -100,34 +100,22 @@ const dealCardPic = () => {
     document.querySelector('.hit').disabled = true
     document.querySelector('.start').disabled = true
     document.querySelector('.displayP').textContent = 'Player loses'
+    document.querySelector('.displayD').textContent = 'House Wins'
   } else if (playerSum <= 21) {
     document.querySelector('.hit').disabled = false
   }
 }
-// dealer's hand
-const dealDealer = () => {
-  const drawnCard = deck.pop()
-  dealerHand.push(drawnCard)
-  const cardLi = document.createElement('li')
-  const img = document.createElement('img')
-  img.src = '/images/cards/' + drawnCard.imageUrl
-  cardLi.appendChild(img)
-  document.querySelector('.dHand').appendChild(cardLi).hidden = true
-  let dealerSum = 0
-  for (let i = 0; i < dealerHand.length; i++) {
-    dealerSum += dealerHand[i].value
-    document.querySelector('.dealer-sum')
-  }
-  // if (dealerSum > 21) {
-  //   document.querySelector('.hit').disabled = true
-  //   document.querySelector('.start').disabled = true
-  //   document.querySelector('.displayP').textContent = 'House Loses'
-  // } else if (dealerSum <= 21) {
-  //   document.querySelector('.hit').disabled = false
-  // }
-}
+//
+//   // if (dealerSum > 21) {
+//   //   document.querySelector('.hit').disabled = true
+//   //   document.querySelector('.start').disabled = true
+//   //   document.querySelector('.displayP').textContent = 'House Loses'
+//   // } else if (dealerSum <= 21) {
+//   //   document.querySelector('.hit').disabled = false
+//   // }
+//
 
-//create the deck
+// create the deck
 
 const makeDeck = () => {
   for (let i = 0; i < suits.length; i++) {
@@ -151,8 +139,6 @@ const shuffleDeck = () => {
     deck[i] = deck[j]
     deck[j] = holder
   }
-
-  // console.log(shuffleDeck)
 }
 
 const makeAndShuffleDeck = () => {
